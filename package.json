@@ -24,6 +24,9 @@
   },
   "homepage": "https://github.com/aganglada/easy-webpack-config#readme",
   "devDependencies": {
+    "babel-core": "^6.24.0",
+    "babel-loader": "^6.4.1",
+    "babel-preset-es2015": "^6.24.0",
     "webpack": "^2.3.1",
     "webpack-dev-server": "^2.4.2"
   }

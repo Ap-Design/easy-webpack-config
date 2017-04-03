@@ -1,3 +1,5 @@
+const webpack = require('webpack');
+
 module.exports = {
     /**
      * entry
@@ -38,5 +40,39 @@ module.exports = {
          * @see https://webpack.js.org/configuration/output/#output-publicpath
          */
         publicPath: __dirname
-    }
+    },
+
+    module: {
+
+        /**
+         * module.rules
+         *
+         * array
+         * @see https://webpack.js.org/configuration/module/#module-rules
+         */
+        rules: [
+            {
+                test: /\.js$/,
+                use: ['babel-loader']
+            }
+        ]
+    },
+
+    /**
+     * plugins
+     *
+     * array
+     * @see https://webpack.js.org/configuration/plugins/#plugins
+     */
+    plugins: [
+
+        new webpack.optimize.UglifyJsPlugin({
+            minimize: true,
+            sourceMap: true,
+            compress: {
+                warnings: false
+            }
+        })
+
+    ]
 };
